@@ -30,8 +30,9 @@ Use this checklist to track progress across sessions without losing context or w
 *Session 3 Checkpoint: All 26 unit and integration tests pass, commit & push to GitHub.*
 
 ### Session 4: Web UI & End-to-End Verification
-- [ ] **Task 7: Drag-and-Drop Web UI** (HTML5, Tailwind, live progress bar, NotebookLM copy button)
-- [ ] **Task 8: CLI Runner & End-to-End Verification** (`run.py`, synthetic audio verification test)
+- [x] **Task 7: Drag-and-Drop Web UI** (Commit: 3a6bb70)
+- [x] **Task 8: CLI Runner & End-to-End Verification** (Commit: will be committed)
+*Session 4 Checkpoint: All 29 unit, integration, and E2E tests pass, commit & push to GitHub.*
 *Session 4 Checkpoint: Full test suite passes, live browser smoke test, ready for merge.*
 
 ---
