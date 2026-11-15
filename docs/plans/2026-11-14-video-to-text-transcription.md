@@ -1,12 +1,38 @@
 # Video to Text Transcription Service Implementation Plan
 
-> **For Gemini:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
+> **For Gemini:** REQUIRED SUB-SKILL: Use superpowers:executing-plans or superpowers:subagent-driven-development to implement this plan task-by-task.
 
 **Goal:** Build a lightweight, local REST API microservice and embedded drag-and-drop web UI that extracts audio from large video files (up to 3.7 GB+) and transcribes them into `.txt` (formatted for Google NotebookLM), `.srt`, and `.vtt` subtitles using `faster-whisper` on CPU.
 
 **Architecture:** A FastAPI backend coordinates streaming file uploads, executes background jobs via a thread pool, extracts 16 kHz mono audio using FFmpeg, and transcribes audio segments with `faster-whisper` INT8 quantization while pushing real-time progress events to a single-page HTML5/JS frontend.
 
 **Tech Stack:** Python 3.11, FastAPI, Uvicorn, faster-whisper (CTranslate2), FFmpeg, Server-Sent Events (SSE), HTML5, Tailwind CSS, Vanilla JavaScript, pytest.
+
+---
+
+## Multi-Session Checkpoint Tracker
+
+Use this checklist to track progress across sessions without losing context or wasting tokens:
+
+### Session 1: Foundations & Extraction
+- [ ] **Task 1: Environment & Project Configuration** (Settings, directories, requirements)
+- [ ] **Task 2: Subtitle & Transcript Formatters** (`.txt`, `.srt`, `.vtt` formatting)
+- [ ] **Task 3: FFmpeg Audio Extraction & Probing** (Audio stripping & duration probe)
+*Session 1 Checkpoint: All unit tests pass, commit & push to GitHub.*
+
+### Session 2: Transcription Engine & Job Queue
+- [ ] **Task 4: faster-whisper Model Wrapper** (INT8 CPU inference & segment streaming)
+- [ ] **Task 5: Job Manager & Task Queue** (Lifecycle state machine & scratch file management)
+*Session 2 Checkpoint: Mocked engine and queue tests pass, commit & push to GitHub.*
+
+### Session 3: REST API & Streaming Endpoints
+- [ ] **Task 6: FastAPI Application & Endpoints** (Streaming upload, SSE progress events, download routes)
+*Session 3 Checkpoint: API integration tests pass, commit & push to GitHub.*
+
+### Session 4: Web UI & End-to-End Verification
+- [ ] **Task 7: Drag-and-Drop Web UI** (HTML5, Tailwind, live progress bar, NotebookLM copy button)
+- [ ] **Task 8: CLI Runner & End-to-End Verification** (`run.py`, synthetic audio verification test)
+*Session 4 Checkpoint: Full test suite passes, live browser smoke test, ready for merge.*
 
 ---
 
