@@ -4,15 +4,29 @@ import subprocess
 from pathlib import Path
 
 def find_ffmpeg_binary() -> str:
+    # 1. Check system PATH
     ffmpeg_path = shutil.which("ffmpeg")
     if ffmpeg_path:
         return ffmpeg_path
+
+    # 2. Check current Python environment via imageio_ffmpeg
     try:
         import imageio_ffmpeg
         return imageio_ffmpeg.get_ffmpeg_exe()
     except (ImportError, RuntimeError):
         pass
-    raise RuntimeError("FFmpeg is not installed or not found on PATH.")
+
+    # 3. Check local .venv binaries directory (fallback if run from global python)
+    root_dir = Path(__file__).resolve().parent.parent
+    venv_binaries = root_dir / ".venv" / "Lib" / "site-packages" / "imageio_ffmpeg" / "binaries"
+    if venv_binaries.exists():
+        for exe in venv_binaries.glob("ffmpeg*.exe"):
+            return str(exe)
+
+    raise RuntimeError(
+        "FFmpeg is not installed or not found on PATH. "
+        "Please run with the virtual environment: '.venv\\Scripts\\python run.py' or run '.\\start.bat'."
+    )
 
 def build_ffmpeg_extract_cmd(input_file: Path, output_file: Path, ffmpeg_bin: str = "ffmpeg") -> list[str]:
     return [
