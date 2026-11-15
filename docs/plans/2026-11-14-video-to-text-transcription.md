@@ -21,9 +21,9 @@ Use this checklist to track progress across sessions without losing context or w
 *Session 1 Checkpoint: All 13 unit tests pass, commit & push to GitHub.*
 
 ### Session 2: Transcription Engine & Job Queue
-- [ ] **Task 4: faster-whisper Model Wrapper** (INT8 CPU inference & segment streaming)
-- [ ] **Task 5: Job Manager & Task Queue** (Lifecycle state machine & scratch file management)
-*Session 2 Checkpoint: Mocked engine and queue tests pass, commit & push to GitHub.*
+- [x] **Task 4: faster-whisper Model Wrapper** (Commit: 5e0ac0e)
+- [x] **Task 5: Job Manager & Task Queue** (Commit: 8bc94a7)
+*Session 2 Checkpoint: All 20 unit tests pass, commit & push to GitHub.*
 
 ### Session 3: REST API & Streaming Endpoints
 - [ ] **Task 6: FastAPI Application & Endpoints** (Streaming upload, SSE progress events, download routes)
