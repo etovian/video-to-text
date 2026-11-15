@@ -26,8 +26,8 @@ Use this checklist to track progress across sessions without losing context or w
 *Session 2 Checkpoint: All 20 unit tests pass, commit & push to GitHub.*
 
 ### Session 3: REST API & Streaming Endpoints
-- [ ] **Task 6: FastAPI Application & Endpoints** (Streaming upload, SSE progress events, download routes)
-*Session 3 Checkpoint: API integration tests pass, commit & push to GitHub.*
+- [x] **Task 6: FastAPI Application & Endpoints** (Commit: 509876c)
+*Session 3 Checkpoint: All 26 unit and integration tests pass, commit & push to GitHub.*
 
 ### Session 4: Web UI & End-to-End Verification
 - [ ] **Task 7: Drag-and-Drop Web UI** (HTML5, Tailwind, live progress bar, NotebookLM copy button)
