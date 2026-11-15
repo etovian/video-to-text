@@ -1,0 +1,15 @@
+/* Custom scrollbars for the transcript preview */
+#transcript-preview::-webkit-scrollbar {
+    width: 8px;
+}
+#transcript-preview::-webkit-scrollbar-track {
+    background: #0f172a;
+    border-radius: 6px;
+}
+#transcript-preview::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 6px;
+}
+#transcript-preview::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}

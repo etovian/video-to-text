@@ -1,7 +1,7 @@
 # Workspace Rules: video-to-text
 
-## Git Permissions & Autonomous Workflow
-- **Working Branches**: The assistant has explicit permission to create, switch, and manage working/feature branches (e.g., `feat/*`, `fix/*`) without asking for permission.
-- **Commits**: The assistant has permission to commit task changes and test milestones autonomously using conventional commits (`feat:`, `fix:`, `docs:`, `test:`).
-- **Remote Push**: The assistant has permission to push commits and branches directly to `origin` (`https://github.com/etovian/video-to-text`) at task and session checkpoints without asking for permission.
-- **Main Branch**: Core development work should happen on feature branches. Merging into `main` should occur after verification.
+## Git Permissions & Environment Constraints
+- **User Permission**: The user has explicitly granted full permission to create working branches, make commits, and push to GitHub.
+- **IDE Sandbox Constraint**: On Windows, the Antigravity sandbox blocks write access to the `.git` directory and prevents network calls. Consequently, `git commit` and `git push` must run outside the sandbox (`BypassSandbox: true`), which requires the user to approve the IDE's system security prompt.
+- **Commit Frequency**: To minimize IDE approval prompts, the assistant must keep commits to **one commit per completed task** (avoiding intermediate micro-commits).
+- **Branching & Remote**: Development occurs on feature branches (`feat/*`). Merges into `main` occur after full task verification.
