@@ -15,10 +15,10 @@
 Use this checklist to track progress across sessions without losing context or wasting tokens:
 
 ### Session 1: Foundations & Extraction
-- [ ] **Task 1: Environment & Project Configuration** (Settings, directories, requirements)
-- [ ] **Task 2: Subtitle & Transcript Formatters** (`.txt`, `.srt`, `.vtt` formatting)
-- [ ] **Task 3: FFmpeg Audio Extraction & Probing** (Audio stripping & duration probe)
-*Session 1 Checkpoint: All unit tests pass, commit & push to GitHub.*
+- [x] **Task 1: Environment & Project Configuration** (Commit: bf5b974)
+- [x] **Task 2: Subtitle & Transcript Formatters** (Commit: 35cc265)
+- [x] **Task 3: FFmpeg Audio Extraction & Probing** (Commit: 358a99b)
+*Session 1 Checkpoint: All 13 unit tests pass, commit & push to GitHub.*
 
 ### Session 2: Transcription Engine & Job Queue
 - [ ] **Task 4: faster-whisper Model Wrapper** (INT8 CPU inference & segment streaming)
